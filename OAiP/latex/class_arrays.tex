@@ -1,0 +1,160 @@
+\doxysection{Класс Arrays}
+\hypertarget{class_arrays}{}\label{class_arrays}\index{Arrays@{Arrays}}
+
+
+Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для работы с массивами  
+
+
+
+
+{\ttfamily \#include $<$Arrays.\+h$>$}
+
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}{print\+Array}} (size\+\_\+t size, auto \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция вывода элементов массива \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb}{filter}} (size\+\_\+t \&size, T \texorpdfstring{$\ast$}{*}array, bool filter\+Func(T element))
+\begin{DoxyCompactList}\small\item\em Шаблонная функция для обхода по {\ttfamily array} размера {\ttfamily size} и удаления из {\ttfamily array} всех элементов, для которых {\ttfamily filter\+Func} возвращает false. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_arrays_a3e8ea696d68296c3a6a5cc60df566260}{fill\+Array}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array, T generator())
+\begin{DoxyCompactList}\small\item\em Шаблонная функция для заполнения {\itshape array} размера {\itshape size} при помощи функции {\itshape generator} \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_arrays_ac2511718fb2ea476610e8a05617f0221}{shift\+Left}} (size\+\_\+t size, size\+\_\+t from, auto \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция для обхода по {\ttfamily array} размера {\ttfamily size} и сдвига всех элементов, который стоят справа от {\ttfamily from} вправо на один элемент \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_arrays_a3e8ea696d68296c3a6a5cc60df566260}{fill\+Array}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array, T generator())
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb}{filter}} (size\+\_\+t \&size, T \texorpdfstring{$\ast$}{*}array, bool filter\+Func(T element))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для работы с массивами 
+
+\doxysubsection{Методы}
+\Hypertarget{class_arrays_a3e8ea696d68296c3a6a5cc60df566260}\label{class_arrays_a3e8ea696d68296c3a6a5cc60df566260} 
+\index{Arrays@{Arrays}!fillArray@{fillArray}}
+\index{fillArray@{fillArray}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{fillArray()}{fillArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Arrays\+::fill\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{T }]{generator() }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Шаблонная функция для заполнения {\itshape array} размера {\itshape size} при помощи функции {\itshape generator} 
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em T} & -\/ любой тип, для которого определен набор функций необходимый для generator и определен оператор присваивания\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em \mbox{[}size\+\_\+t\&\mbox{]}} & size Размер массива для вывода \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Указатель на массив, который необходимо отфильтровать \\
+\hline
+{\em \mbox{[}\+T\mbox{]}} & generator Функция которая генерирует новый элемент\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+--- 
+\end{DoxyReturn}
+\Hypertarget{class_arrays_a3e8ea696d68296c3a6a5cc60df566260}\label{class_arrays_a3e8ea696d68296c3a6a5cc60df566260} 
+\index{Arrays@{Arrays}!fillArray@{fillArray}}
+\index{fillArray@{fillArray}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{fillArray()}{fillArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Arrays\+::fill\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{T }]{generator() }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb}\label{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb} 
+\index{Arrays@{Arrays}!filter@{filter}}
+\index{filter@{filter}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Arrays\+::filter (\begin{DoxyParamCaption}\item[{size\+\_\+t \&}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{bool }]{filter\+FuncT element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Шаблонная функция для обхода по {\ttfamily array} размера {\ttfamily size} и удаления из {\ttfamily array} всех элементов, для которых {\ttfamily filter\+Func} возвращает false. 
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em T} & -\/ любой тип, для которого определен оператор необходимый для функции фильтрации\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em \mbox{[}size\+\_\+t\&\mbox{]}} & size Размер массива для вывода \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Указатель на массив, который необходимо отфильтровать \\
+\hline
+{\em \mbox{[}bool\mbox{]}} & filter\+Func Функция которая выполняет проверку, удовлетворяет ли элемент массива условию фильтрации\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+--- 
+\end{DoxyReturn}
+\Hypertarget{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb}\label{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb} 
+\index{Arrays@{Arrays}!filter@{filter}}
+\index{filter@{filter}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Arrays\+::filter (\begin{DoxyParamCaption}\item[{size\+\_\+t \&}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{bool }]{filter\+FuncT element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}\label{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc} 
+\index{Arrays@{Arrays}!printArray@{printArray}}
+\index{printArray@{printArray}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{printArray()}{printArray()}}
+{\footnotesize\ttfamily static void Arrays\+::print\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{auto \texorpdfstring{$\ast$}{*}}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Шаблонная функция вывода элементов массива 
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em auto} & -\/ любой тип, для которого определен оператор вывода в поток\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em \mbox{[}size\+\_\+t\mbox{]}} & size Размер массива для вывода \\
+\hline
+{\em \mbox{[}auto\texorpdfstring{$\ast$}{*}\mbox{]}} & array Массив, который необходимо выввести в консоль\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+--- 
+\end{DoxyReturn}
+\Hypertarget{class_arrays_ac2511718fb2ea476610e8a05617f0221}\label{class_arrays_ac2511718fb2ea476610e8a05617f0221} 
+\index{Arrays@{Arrays}!shiftLeft@{shiftLeft}}
+\index{shiftLeft@{shiftLeft}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{shiftLeft()}{shiftLeft()}}
+{\footnotesize\ttfamily static void Arrays\+::shift\+Left (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{from,  }\item[{auto \texorpdfstring{$\ast$}{*}}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Шаблонная функция для обхода по {\ttfamily array} размера {\ttfamily size} и сдвига всех элементов, который стоят справа от {\ttfamily from} вправо на один элемент 
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em auto} & -\/ любой тип\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em \mbox{[}size\+\_\+t\&\mbox{]}} & size Размер массива для сдвига \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Указатель на массив, элементы которого необходимо сдвинуть \\
+\hline
+{\em \mbox{[}size\+\_\+t\mbox{]}} & from Индекс элемента, с которого необходимо сдвинуть\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+--- 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_arrays_8h}{Arrays.\+h}}\item 
+\mbox{\hyperlink{_source_func_8cpp}{Source\+Func.\+cpp}}\end{DoxyCompactItemize}
