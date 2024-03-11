@@ -40,7 +40,7 @@ jobs:
       - name: Install Graphviz
         run: sudo apt install graphviz
       - name: Move to
-        run: sudo cd ./OAiP/
+        run:  cd ./OAiP/
       # Create documentation   
       - name: Create documentation     
         run: doxygen
