@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['shiftleft_0',['shiftLeft',['../class_arrays.html#ac2511718fb2ea476610e8a05617f0221',1,'Arrays']]]
+  ['quicksort_0',['QuickSort',['../class_arrays.html#a4e43c410582df3d8c46b4597d6acfee0',1,'Arrays']]],
+  ['quicksortimp_1',['QuickSortImp',['../class_arrays.html#a062d4cf095d9d487e0f4e06b8f1954f4',1,'Arrays']]]
 ];

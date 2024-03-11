@@ -1,27 +1,89 @@
 \doxysection{Arrays.\+h}
-\hypertarget{_arrays_8h_source}{}\label{_arrays_8h_source}\mbox{\hyperlink{_arrays_8h}{См. документацию.}}
+\hypertarget{_arrays_8h_source}{}\label{_arrays_8h_source}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arrays}{Arrays}}\ \{}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}{printArray}}(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keyword}{auto}*\ array);}
-\DoxyCodeLine{00023\ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_ab42b84dbf5f4ed671ae536feca8f59fb}{filter}}(\textcolor{keywordtype}{size\_t}\&\ size,\ T*\ array,\ \textcolor{keywordtype}{bool}\ filterFunc(T\ element));}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_a3e8ea696d68296c3a6a5cc60df566260}{fillArray}}(\textcolor{keywordtype}{size\_t}\ size,\ T*\ array,\ T\ generator());}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_ac2511718fb2ea476610e8a05617f0221}{shiftLeft}}(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ from,\ \textcolor{keyword}{auto}*\ array);}
-\DoxyCodeLine{00066\ \};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}{printArray}}(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keyword}{auto}*\ array)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ size;\ j++)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(6)\ <<\ array[j];}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_arrays_a92933d232c51769a2039ca5637d78c61}{filter}}(\textcolor{keywordtype}{size\_t}\&\ size,\ T*\ array,\ \textcolor{keywordtype}{bool}\ (*filterFunc)(T\ element))}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempCake;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!filterFunc(array[i]))\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>shiftLeft(size,\ i,\ array);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size-\/-\/;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_arrays_af0b96733542610cfeacdd018ece8a0b6}{fillArray}}(\textcolor{keywordtype}{size\_t}\ size,\ T*\ array,\ T(*generator)())}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ array[i]\ =\ generator();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arrays_a4e43c410582df3d8c46b4597d6acfee0}{QuickSort}}(T*\ array,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{bool}\ (*comparator)(T\ left,\ T\ right))\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (array\ !=\ \textcolor{keyword}{nullptr}\ and\ size\ >\ 2)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ QuickSortImp<T>(array,\ 0,\ size\ -\/\ 1,\ comparator);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ Partition(T*\ values,\ \textcolor{keywordtype}{size\_t}\ l,\ \textcolor{keywordtype}{size\_t}\ r,\ \textcolor{keywordtype}{bool}\ (*comparator)(T,\ T))\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ T\ x\ =\ values[r];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ T\ less\ =\ l;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ l;\ i\ <\ r;\ ++i)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comparator(values[i],\ x))\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(values[i],\ values[less]);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++less;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ std::swap(values[less],\ values[r]);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ less;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ QuickSortImp(T*\ array,\ \textcolor{keywordtype}{size\_t}\ left,\ \textcolor{keywordtype}{size\_t}\ right,\ \textcolor{keywordtype}{bool}\ (*comparator)(T,\ T))\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ <\ right)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ q\ =\ Partition(array,\ left,\ right,\ comparator);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ QuickSortImp(array,\ left,\ q\ -\/\ 1,\ comparator);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ QuickSortImp(array,\ q\ +\ 1,\ right,\ comparator);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \ shiftLeft(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ from,\ \textcolor{keyword}{auto}*\ array)\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ from;\ i\ <\ size\ -\/\ 1;\ i++)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ array[i]\ =\ array[i\ +\ 1];}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
 
 \end{DoxyCode}
