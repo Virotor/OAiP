@@ -1,4 +1,32 @@
 ﻿  Source.cpp
-  SourceFunc.cpp
-  Создание кода...
+C:\Users\I will fight\source\repos\OAiP\OAiP\Source.cpp(15,12): warning C4101: arrays: неиспользованная локальная переменная
+C:\Users\I will fight\source\repos\OAiP\OAiP\Arrays.h(55,13): warning C4101: tempCake: неиспользованная локальная переменная
+  (компиляция исходного файла "Source.cpp")
+  C:\Users\I will fight\source\repos\OAiP\OAiP\Arrays.h(55,13):
+  контекст создания экземпляра шаблона (сначала самый старый)
+  	C:\Users\I will fight\source\repos\OAiP\OAiP\Source.cpp(17,13):
+  	выполняется компиляция ссылки на экземпляр шаблон функции "void Arrays::filter<int>(size_t &,T *,bool (__cdecl *)(T))"
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\I will fight\source\repos\OAiP\OAiP\Arrays.h(97,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "Source.cpp")
+  C:\Users\I will fight\source\repos\OAiP\OAiP\Arrays.h(97,20):
+  контекст создания экземпляра шаблона (сначала самый старый)
+  	C:\Users\I will fight\source\repos\OAiP\OAiP\Source.cpp(17,13):
+  	выполняется компиляция ссылки на экземпляр шаблон функции "void Arrays::filter<int>(size_t &,T *,bool (__cdecl *)(T))"
+          with
+          [
+              T=int
+          ]
+  	C:\Users\I will fight\source\repos\OAiP\OAiP\Arrays.h(58,25):
+  	выполняется компиляция ссылки на экземпляр шаблон функции "void Arrays::shiftLeft<T>(size_t,size_t,_T0 *)"
+          with
+          [
+              T=int,
+              _T0=int
+          ]
+  
   OAiP.vcxproj -> C:\Users\I will fight\source\repos\OAiP\x64\Debug\OAiP.exe
