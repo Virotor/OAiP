@@ -95,6 +95,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e43c410582df3d8c46b4597d6acfee0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4e43c410582df3d8c46b4597d6acfee0">QuickSort</a> (T *array, size_t size, bool(*comparator)(T left, T right))</td></tr>
 <tr class="memdesc:a4e43c410582df3d8c46b4597d6acfee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция для сортировки <code>array</code> размера <code>size</code> при помощи быстрой сортировки по функции <em>comparator</em>  <br /></td></tr>
 <tr class="separator:a4e43c410582df3d8c46b4597d6acfee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4181230f37a03d713c8cfac7714f7f95" id="r_a4181230f37a03d713c8cfac7714f7f95"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4181230f37a03d713c8cfac7714f7f95"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4181230f37a03d713c8cfac7714f7f95">findIndex</a> (size_t size, T *array, T element)</td></tr>
+<tr class="memdesc:a4181230f37a03d713c8cfac7714f7f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция поиска первого вхождения элемента в массив  <br /></td></tr>
+<tr class="separator:a4181230f37a03d713c8cfac7714f7f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6045c78d7627ff4fcf441770df288e01" id="r_a6045c78d7627ff4fcf441770df288e01"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6045c78d7627ff4fcf441770df288e01"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6045c78d7627ff4fcf441770df288e01">findLastIndex</a> (size_t size, T *array, T element)</td></tr>
+<tr class="memdesc:a6045c78d7627ff4fcf441770df288e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция поиска последнего вхождения элемента в массив  <br /></td></tr>
+<tr class="separator:a6045c78d7627ff4fcf441770df288e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2d741519dc262fb6aac17799ed659f" id="r_ada2d741519dc262fb6aac17799ed659f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ada2d741519dc262fb6aac17799ed659f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ada2d741519dc262fb6aac17799ed659f">count</a> (size_t size, T *array, T element)</td></tr>
+<tr class="memdesc:ada2d741519dc262fb6aac17799ed659f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция подсчёта количества вхождений элемента в массив  <br /></td></tr>
+<tr class="separator:ada2d741519dc262fb6aac17799ed659f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d974979de46cf40c2945c9113801f9c" id="r_a0d974979de46cf40c2945c9113801f9c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0d974979de46cf40c2945c9113801f9c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0d974979de46cf40c2945c9113801f9c">isPolyndrom</a> (size_t size, T *array)</td></tr>
+<tr class="memdesc:a0d974979de46cf40c2945c9113801f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция проверки является ли массив полиндромом  <br /></td></tr>
+<tr class="separator:a0d974979de46cf40c2945c9113801f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -109,6 +125,68 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для работы с массивами </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada2d741519dc262fb6aac17799ed659f" name="ada2d741519dc262fb6aac17799ed659f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2d741519dc262fb6aac17799ed659f">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Arrays::count </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>array</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Шаблонная функция подсчёта количества вхождений элемента в массив </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- любой тип, для которого определен оператор вывода в поток</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[size_t]</td><td>size Размер массива </td></tr>
+    <tr><td class="paramname">[T*]</td><td>array Массив, в котором необходимо посчитать элемент </td></tr>
+    <tr><td class="paramname">[T]</td><td>array Элемент, который необходимо посчитать <div class="fragment"><div class="line"><span class="keywordtype">size_t</span> size = 10;</div>
+<div class="line"><span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[size];</div>
+<div class="line">srand(time(NULL));</div>
+<div class="line">Arrays::fillArray&lt;int&gt;(size, array, []() {<span class="keywordflow">return</span> rand() % 5 + 1; }); </div>
+<div class="line">Arrays::printArray&lt;int&gt;(size, array); </div>
+<div class="line"><a class="code hl_class" href="class_arrays.html">Arrays</a> arrays;</div>
+<div class="line">std:: cout &lt;&lt;<span class="stringliteral">&quot;Count of element = &quot;</span>&lt;&lt; arrays.<a class="code hl_function" href="#ada2d741519dc262fb6aac17799ed659f">count</a>&lt;<span class="keywordtype">int</span>&gt;(size, array, 3);</div>
+<div class="ttc" id="aclass_arrays_html"><div class="ttname"><a href="class_arrays.html">Arrays</a></div><div class="ttdoc">Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для рабо...</div><div class="ttdef"><b>Definition</b> Arrays.h:9</div></div>
+<div class="ttc" id="aclass_arrays_html_ada2d741519dc262fb6aac17799ed659f"><div class="ttname"><a href="#ada2d741519dc262fb6aac17799ed659f">Arrays::count</a></div><div class="ttdeci">int count(size_t size, T *array, T element)</div><div class="ttdoc">Шаблонная функция подсчёта количества вхождений элемента в массив</div><div class="ttdef"><b>Definition</b> Arrays.h:219</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>количество вхождений элемента в массив </dd></dl>
+
+</div>
+</div>
 <a id="af0b96733542610cfeacdd018ece8a0b6" name="af0b96733542610cfeacdd018ece8a0b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0b96733542610cfeacdd018ece8a0b6">&#9670;&#160;</a></span>fillArray()</h2>
 
@@ -225,9 +303,185 @@ template&lt;typename T &gt; </div>
 <div class="line"> </div>
 <div class="line">arrays.<a class="code hl_function" href="#a92933d232c51769a2039ca5637d78c61">filter</a>&lt;<span class="keywordtype">int</span>&gt;(size, array, [](<span class="keywordtype">int</span> element) {<span class="keywordflow">return</span> element % 2 == 0; });</div>
 <div class="line">Arrays::printArray&lt;int&gt;(size, array);</div>
-<div class="ttc" id="aclass_arrays_html"><div class="ttname"><a href="class_arrays.html">Arrays</a></div><div class="ttdoc">Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для рабо...</div><div class="ttdef"><b>Definition</b> Arrays.h:9</div></div>
 <div class="ttc" id="aclass_arrays_html_a92933d232c51769a2039ca5637d78c61"><div class="ttname"><a href="#a92933d232c51769a2039ca5637d78c61">Arrays::filter</a></div><div class="ttdeci">void filter(size_t &amp;size, T *array, bool(*filterFunc)(T element))</div><div class="ttdoc">Шаблонная функция для обхода по array размера size и удаления из array всех элементов,...</div><div class="ttdef"><b>Definition</b> Arrays.h:63</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>&mdash; </dd></dl>
+
+</div>
+</div>
+<a id="a4181230f37a03d713c8cfac7714f7f95" name="a4181230f37a03d713c8cfac7714f7f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4181230f37a03d713c8cfac7714f7f95">&#9670;&#160;</a></span>findIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Arrays::findIndex </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>array</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Шаблонная функция поиска первого вхождения элемента в массив </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- любой тип, для которого определен оператор вывода в поток</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[size_t]</td><td>size Размер массива </td></tr>
+    <tr><td class="paramname">[T*]</td><td>array Массив, в котором необходимо найти элемент </td></tr>
+    <tr><td class="paramname">[T]</td><td>array Элемент, который необходимо найти <div class="fragment"><div class="line"><span class="keywordtype">size_t</span> size = 10;</div>
+<div class="line"><span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[size];</div>
+<div class="line">srand(time(NULL));</div>
+<div class="line">Arrays::fillArray&lt;int&gt;(size, array, []() {<span class="keywordflow">return</span> rand() % 5 + 1; }); </div>
+<div class="line">Arrays::printArray&lt;int&gt;(size, array); </div>
+<div class="line"><a class="code hl_class" href="class_arrays.html">Arrays</a> arrays;</div>
+<div class="line">std:: cout &lt;&lt;<span class="stringliteral">&quot;Index of element = &quot;</span>&lt;&lt; arrays.<a class="code hl_function" href="#a4181230f37a03d713c8cfac7714f7f95">findIndex</a>&lt;<span class="keywordtype">int</span>&gt;(size, array, 3);</div>
+<div class="ttc" id="aclass_arrays_html_a4181230f37a03d713c8cfac7714f7f95"><div class="ttname"><a href="#a4181230f37a03d713c8cfac7714f7f95">Arrays::findIndex</a></div><div class="ttdeci">int findIndex(size_t size, T *array, T element)</div><div class="ttdoc">Шаблонная функция поиска первого вхождения элемента в массив</div><div class="ttdef"><b>Definition</b> Arrays.h:156</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>первое вхождение элемента или -1, если такого элемента в массиве нет </dd></dl>
+
+</div>
+</div>
+<a id="a6045c78d7627ff4fcf441770df288e01" name="a6045c78d7627ff4fcf441770df288e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6045c78d7627ff4fcf441770df288e01">&#9670;&#160;</a></span>findLastIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Arrays::findLastIndex </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>array</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Шаблонная функция поиска последнего вхождения элемента в массив </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- любой тип, для которого определен оператор вывода в поток</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[size_t]</td><td>size Размер массива </td></tr>
+    <tr><td class="paramname">[T*]</td><td>array Массив, в котором необходимо найти элемент </td></tr>
+    <tr><td class="paramname">[T]</td><td>array Элемент, который необходимо найти <div class="fragment"><div class="line"><span class="keywordtype">size_t</span> size = 10;</div>
+<div class="line"><span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[size];</div>
+<div class="line">srand(time(NULL));</div>
+<div class="line">Arrays::fillArray&lt;int&gt;(size, array, []() {<span class="keywordflow">return</span> rand() % 5 + 1; }); </div>
+<div class="line">Arrays::printArray&lt;int&gt;(size, array); </div>
+<div class="line"><a class="code hl_class" href="class_arrays.html">Arrays</a> arrays;</div>
+<div class="line">std:: cout &lt;&lt;<span class="stringliteral">&quot;Index of element = &quot;</span>&lt;&lt; arrays.<a class="code hl_function" href="#a6045c78d7627ff4fcf441770df288e01">findLastIndex</a>&lt;<span class="keywordtype">int</span>&gt;(size, array, 3);</div>
+<div class="ttc" id="aclass_arrays_html_a6045c78d7627ff4fcf441770df288e01"><div class="ttname"><a href="#a6045c78d7627ff4fcf441770df288e01">Arrays::findLastIndex</a></div><div class="ttdeci">int findLastIndex(size_t size, T *array, T element)</div><div class="ttdoc">Шаблонная функция поиска последнего вхождения элемента в массив</div><div class="ttdef"><b>Definition</b> Arrays.h:187</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>последнее вхождение элемента или -1, если такого элемента в массиве нет </dd></dl>
+
+</div>
+</div>
+<a id="a0d974979de46cf40c2945c9113801f9c" name="a0d974979de46cf40c2945c9113801f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d974979de46cf40c2945c9113801f9c">&#9670;&#160;</a></span>isPolyndrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Arrays::isPolyndrom </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>array</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Шаблонная функция проверки является ли массив полиндромом </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- любой тип, для которого определен оператор вывода в поток</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[size_t]</td><td>size Размер массива </td></tr>
+    <tr><td class="paramname">[T*]</td><td>array Массив, который необходимо проверить на полиндром</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> size = 10;</div>
+<div class="line"><span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[size];</div>
+<div class="line">srand(time(NULL));</div>
+<div class="line">Arrays::fillArray&lt;int&gt;(size, array, []() {<span class="keywordflow">return</span> rand() % 5 + 1; }); </div>
+<div class="line">Arrays::printArray&lt;int&gt;(size, array); </div>
+<div class="line"><a class="code hl_class" href="class_arrays.html">Arrays</a> arrays;</div>
+<div class="line">std:: cout &lt;&lt;<span class="stringliteral">&quot;Array is polyndrom = &quot;</span>&lt;&lt; arrays.<a class="code hl_function" href="#a0d974979de46cf40c2945c9113801f9c">isPolyndrom</a>(size, array);</div>
+<div class="ttc" id="aclass_arrays_html_a0d974979de46cf40c2945c9113801f9c"><div class="ttname"><a href="#a0d974979de46cf40c2945c9113801f9c">Arrays::isPolyndrom</a></div><div class="ttdeci">bool isPolyndrom(size_t size, T *array)</div><div class="ttdoc">Шаблонная функция проверки является ли массив полиндромом</div><div class="ttdef"><b>Definition</b> Arrays.h:252</div></div>
+</div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>возвращает true, если массив полиндром, иначе false </dd></dl>
 
 </div>
 </div>
@@ -330,7 +584,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"> <span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[10] { 1, 2, 3, 5, 6, 7, 10, 11, 21, 12 };</div>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span>* array = <span class="keyword">new</span> <span class="keywordtype">int</span>[10] { 1, 2, 3, 5, 6, 7, 10, 11, 21, 12 };</div>
 <div class="line"> </div>
 <div class="line">Arrays::printArray&lt;int&gt;(10, array);</div>
 <div class="line"> </div>

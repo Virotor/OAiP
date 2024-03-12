@@ -15,7 +15,15 @@
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_arrays_a92933d232c51769a2039ca5637d78c61}{filter}} (size\+\_\+t \&size, T \texorpdfstring{$\ast$}{*}array, bool(\texorpdfstring{$\ast$}{*}filter\+Func)(T element))
 \begin{DoxyCompactList}\small\item\em Шаблонная функция для обхода по {\ttfamily array} размера {\ttfamily size} и удаления из {\ttfamily array} всех элементов, для которых {\ttfamily filter\+Func} возвращает false. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_arrays_a4e43c410582df3d8c46b4597d6acfee0}{Quick\+Sort}} (T \texorpdfstring{$\ast$}{*}array, size\+\_\+t size, bool(\texorpdfstring{$\ast$}{*}comparator)(T left, T right))
-\begin{DoxyCompactList}\small\item\em Шаблонная функция для сортировки {\ttfamily array} размера {\ttfamily size} при помощи быстрой сортировки по функции {\itshape comparator} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Шаблонная функция для сортировки {\ttfamily array} размера {\ttfamily size} при помощи быстрой сортировки по функции {\itshape comparator} \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{class_arrays_a4181230f37a03d713c8cfac7714f7f95}{find\+Index}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array, T element)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция поиска первого вхождения элемента в массив \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{class_arrays_a6045c78d7627ff4fcf441770df288e01}{find\+Last\+Index}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array, T element)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция поиска последнего вхождения элемента в массив \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{class_arrays_ada2d741519dc262fb6aac17799ed659f}{count}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array, T element)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция подсчёта количества вхождений элемента в массив \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{class_arrays_a0d974979de46cf40c2945c9113801f9c}{is\+Polyndrom}} (size\+\_\+t size, T \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Шаблонная функция проверки является ли массив полиндромом \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,6 +37,45 @@ static void \mbox{\hyperlink{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}{pri
 Класс для работы с массивами Данный класс предоставляет шаблонный код с различными функциями для работы с массивами 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_arrays_ada2d741519dc262fb6aac17799ed659f}\label{class_arrays_ada2d741519dc262fb6aac17799ed659f} 
+\index{Arrays@{Arrays}!count@{count}}
+\index{count@{count}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int Arrays\+::count (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Шаблонная функция подсчёта количества вхождений элемента в массив 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ любой тип, для которого определен оператор вывода в поток\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}size\+\_\+t\mbox{]}} & size Размер массива \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Массив, в котором необходимо посчитать элемент \\
+\hline
+{\em \mbox{[}\+T\mbox{]}} & array Элемент, который необходимо посчитать 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ size\ =\ 10;}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{srand(time(NULL));}
+\DoxyCodeLine{Arrays::fillArray<int>(size,\ array,\ []()\ \{\textcolor{keywordflow}{return}\ rand()\ \%\ 5\ +\ 1;\ \});\ }
+\DoxyCodeLine{Arrays::printArray<int>(size,\ array);\ }
+\DoxyCodeLine{\mbox{\hyperlink{class_arrays}{Arrays}}\ arrays;}
+\DoxyCodeLine{std::\ cout\ <<\textcolor{stringliteral}{"{}Count\ of\ element\ =\ "{}}<<\ arrays.\mbox{\hyperlink{class_arrays_ada2d741519dc262fb6aac17799ed659f}{count}}<\textcolor{keywordtype}{int}>(size,\ array,\ 3);}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+количество вхождений элемента в массив 
+\end{DoxyReturn}
 \Hypertarget{class_arrays_af0b96733542610cfeacdd018ece8a0b6}\label{class_arrays_af0b96733542610cfeacdd018ece8a0b6} 
 \index{Arrays@{Arrays}!fillArray@{fillArray}}
 \index{fillArray@{fillArray}!Arrays@{Arrays}}
@@ -109,6 +156,121 @@ void Arrays\+::filter (\begin{DoxyParamCaption}\item[{size\+\_\+t \&}]{size,  }\
 \begin{DoxyReturn}{Returns}
 --- 
 \end{DoxyReturn}
+\Hypertarget{class_arrays_a4181230f37a03d713c8cfac7714f7f95}\label{class_arrays_a4181230f37a03d713c8cfac7714f7f95} 
+\index{Arrays@{Arrays}!findIndex@{findIndex}}
+\index{findIndex@{findIndex}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{findIndex()}{findIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int Arrays\+::find\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Шаблонная функция поиска первого вхождения элемента в массив 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ любой тип, для которого определен оператор вывода в поток\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}size\+\_\+t\mbox{]}} & size Размер массива \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Массив, в котором необходимо найти элемент \\
+\hline
+{\em \mbox{[}\+T\mbox{]}} & array Элемент, который необходимо найти 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ size\ =\ 10;}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{srand(time(NULL));}
+\DoxyCodeLine{Arrays::fillArray<int>(size,\ array,\ []()\ \{\textcolor{keywordflow}{return}\ rand()\ \%\ 5\ +\ 1;\ \});\ }
+\DoxyCodeLine{Arrays::printArray<int>(size,\ array);\ }
+\DoxyCodeLine{\mbox{\hyperlink{class_arrays}{Arrays}}\ arrays;}
+\DoxyCodeLine{std::\ cout\ <<\textcolor{stringliteral}{"{}Index\ of\ element\ =\ "{}}<<\ arrays.\mbox{\hyperlink{class_arrays_a4181230f37a03d713c8cfac7714f7f95}{findIndex}}<\textcolor{keywordtype}{int}>(size,\ array,\ 3);}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+первое вхождение элемента или -\/1, если такого элемента в массиве нет 
+\end{DoxyReturn}
+\Hypertarget{class_arrays_a6045c78d7627ff4fcf441770df288e01}\label{class_arrays_a6045c78d7627ff4fcf441770df288e01} 
+\index{Arrays@{Arrays}!findLastIndex@{findLastIndex}}
+\index{findLastIndex@{findLastIndex}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{findLastIndex()}{findLastIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int Arrays\+::find\+Last\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array,  }\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Шаблонная функция поиска последнего вхождения элемента в массив 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ любой тип, для которого определен оператор вывода в поток\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}size\+\_\+t\mbox{]}} & size Размер массива \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Массив, в котором необходимо найти элемент \\
+\hline
+{\em \mbox{[}\+T\mbox{]}} & array Элемент, который необходимо найти 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ size\ =\ 10;}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{srand(time(NULL));}
+\DoxyCodeLine{Arrays::fillArray<int>(size,\ array,\ []()\ \{\textcolor{keywordflow}{return}\ rand()\ \%\ 5\ +\ 1;\ \});\ }
+\DoxyCodeLine{Arrays::printArray<int>(size,\ array);\ }
+\DoxyCodeLine{\mbox{\hyperlink{class_arrays}{Arrays}}\ arrays;}
+\DoxyCodeLine{std::\ cout\ <<\textcolor{stringliteral}{"{}Index\ of\ element\ =\ "{}}<<\ arrays.\mbox{\hyperlink{class_arrays_a6045c78d7627ff4fcf441770df288e01}{findLastIndex}}<\textcolor{keywordtype}{int}>(size,\ array,\ 3);}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+последнее вхождение элемента или -\/1, если такого элемента в массиве нет 
+\end{DoxyReturn}
+\Hypertarget{class_arrays_a0d974979de46cf40c2945c9113801f9c}\label{class_arrays_a0d974979de46cf40c2945c9113801f9c} 
+\index{Arrays@{Arrays}!isPolyndrom@{isPolyndrom}}
+\index{isPolyndrom@{isPolyndrom}!Arrays@{Arrays}}
+\doxysubsubsection{\texorpdfstring{isPolyndrom()}{isPolyndrom()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Arrays\+::is\+Polyndrom (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{T \texorpdfstring{$\ast$}{*}}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Шаблонная функция проверки является ли массив полиндромом 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ любой тип, для которого определен оператор вывода в поток\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}size\+\_\+t\mbox{]}} & size Размер массива \\
+\hline
+{\em \mbox{[}\+T\texorpdfstring{$\ast$}{*}\mbox{]}} & array Массив, который необходимо проверить на полиндром\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ size\ =\ 10;}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[size];}
+\DoxyCodeLine{srand(time(NULL));}
+\DoxyCodeLine{Arrays::fillArray<int>(size,\ array,\ []()\ \{\textcolor{keywordflow}{return}\ rand()\ \%\ 5\ +\ 1;\ \});\ }
+\DoxyCodeLine{Arrays::printArray<int>(size,\ array);\ }
+\DoxyCodeLine{\mbox{\hyperlink{class_arrays}{Arrays}}\ arrays;}
+\DoxyCodeLine{std::\ cout\ <<\textcolor{stringliteral}{"{}Array\ is\ polyndrom\ =\ "{}}<<\ arrays.\mbox{\hyperlink{class_arrays_a0d974979de46cf40c2945c9113801f9c}{isPolyndrom}}(size,\ array);}
+
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+возвращает true, если массив полиндром, иначе false 
+\end{DoxyReturn}
 \Hypertarget{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc}\label{class_arrays_a69ea80ce37f0294d9692eb1ef8412cfc} 
 \index{Arrays@{Arrays}!printArray@{printArray}}
 \index{printArray@{printArray}!Arrays@{Arrays}}
@@ -170,7 +332,7 @@ void Arrays\+::\+Quick\+Sort (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[10]\ \{\ 1,\ 2,\ 3,\ 5,\ 6,\ 7,\ 10,\ 11,\ 21,\ 12\ \};}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ array\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[10]\ \{\ 1,\ 2,\ 3,\ 5,\ 6,\ 7,\ 10,\ 11,\ 21,\ 12\ \};}
 \DoxyCodeLine{}
 \DoxyCodeLine{Arrays::printArray<int>(10,\ array);}
 \DoxyCodeLine{}
