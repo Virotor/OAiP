@@ -131,6 +131,132 @@ public:
 			QuickSortImp<T>(array, 0, size - 1, comparator);
 		}
 	}
+	/**
+	 \brief Шаблонная функция поиска первого вхождения элемента в массив
+
+	 \tparam T - любой тип, для которого определен оператор вывода в поток
+
+	 \param [size_t] size Размер массива
+	 \param [T*] array Массив, в котором необходимо найти элемент
+	 \param [T] array Элемент, который необходимо найти
+	 \code{cpp}
+
+	 size_t size = 10;
+	 int* array = new int[size];
+	 srand(time(NULL));
+	 Arrays::fillArray<int>(size, array, []() {return rand() % 5 + 1; }); 
+	 Arrays::printArray<int>(size, array); 
+	 Arrays arrays;
+	 std:: cout <<"Index of element = "<< arrays.findIndex<int>(size, array, 3);
+
+	 \endcode
+	 \return первое вхождение элемента или -1, если такого элемента в массиве нет
+	*/
+	template <typename T>
+	int findIndex(size_t size, T* array, T element) {
+		for (int i = 0; i < size; i++) {
+			if (array[i] == element) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	 /**
+	 \brief Шаблонная функция поиска последнего вхождения элемента в массив
+
+	 \tparam T - любой тип, для которого определен оператор вывода в поток
+
+	 \param [size_t] size Размер массива
+	 \param [T*] array Массив, в котором необходимо найти элемент
+	 \param [T] array Элемент, который необходимо найти
+	 \code{cpp}
+
+	 size_t size = 10;
+	 int* array = new int[size];
+	 srand(time(NULL));
+	 Arrays::fillArray<int>(size, array, []() {return rand() % 5 + 1; }); 
+	 Arrays::printArray<int>(size, array); 
+	 Arrays arrays;
+	 std:: cout <<"Index of element = "<< arrays.findLastIndex<int>(size, array, 3);
+
+	 \endcode
+	 \return последнее вхождение элемента или -1, если такого элемента в массиве нет
+	*/
+	template <typename T>
+	int findLastIndex(size_t size, T* array, T element) {
+		for (int i = size - 1; size >= 0; i--) {
+			if (array[i] == element) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+
+	/**
+	\brief Шаблонная функция подсчёта количества вхождений элемента в массив
+
+	\tparam T - любой тип, для которого определен оператор вывода в поток
+
+	\param [size_t] size Размер массива
+	\param [T*] array Массив, в котором необходимо посчитать элемент
+	\param [T] array Элемент, который необходимо посчитать
+	\code{cpp}
+
+	 size_t size = 10;
+	 int* array = new int[size];
+	 srand(time(NULL));
+	 Arrays::fillArray<int>(size, array, []() {return rand() % 5 + 1; }); 
+	 Arrays::printArray<int>(size, array); 
+	 Arrays arrays;
+	 std:: cout <<"Count of element = "<< arrays.count<int>(size, array, 3);
+
+	\endcode
+	\return количество вхождений элемента в массив
+   */
+	template <typename T>
+	int count(size_t size, T* array, T element) {
+		int count = 0;
+		for (int i = size - 1; size >= 0; i--) {
+			if (array[i] == element) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+
+	/**
+	\brief Шаблонная функция проверки является ли массив полиндромом
+
+	\tparam T - любой тип, для которого определен оператор вывода в поток
+
+	\param [size_t] size Размер массива
+	\param [T*] array Массив, который необходимо проверить на полиндром 
+
+	\code{cpp}
+
+	 size_t size = 10;
+	 int* array = new int[size];
+	 srand(time(NULL));
+	 Arrays::fillArray<int>(size, array, []() {return rand() % 5 + 1; }); 
+	 Arrays::printArray<int>(size, array); 
+	 Arrays arrays;
+	 std:: cout <<"Array is polyndrom = "<< arrays.isPolyndrom(size, array);
+
+	\endcode
+	\return возвращает true, если массив полиндром, иначе false
+   */
+	template <typename T>
+	bool isPolyndrom(size_t size, T* array) {
+		for (int i = 0; i<size/2; i++) {
+			if (array[i] != array[size-i-1]) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 
 private:

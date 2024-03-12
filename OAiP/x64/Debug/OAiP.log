@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-C:\Users\I will fight\source\repos\OAiP\OAiP\Source.cpp(13,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\I will fight\source\repos\OAiP\OAiP\Source.cpp(12,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   OAiP.vcxproj -> C:\Users\I will fight\source\repos\OAiP\x64\Debug\OAiP.exe
